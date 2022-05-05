@@ -15,4 +15,16 @@ Microsoft.Extensions.Hosting contains dependencyinjection
 
     A framework controls which code is executed next, not your code
 
-    
+# ch3
+
+-   Scoped
+    -   a new instance is created once per scope, and then reuse in the scope
+
+        using var firstScope=host.Services.CreateScope();
+        var resolveOnce=firstScope.ServiceProvider.GetRequiredService<IProductImporter>()
+        var resolveTwice=firstScope.ServiceProvider.GetRequiredService<IProductImporter>()
+        var isSameInFirstScope=Object.ReferenceEquals(resolveOnce, resolveTwice);
+        
+-   Transient
+    -   a new instance will be returned every time
+        var areSameInstance= Object.ReferenceEquals(resolvedOnce, resolveTwice);
