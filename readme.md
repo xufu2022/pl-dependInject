@@ -50,3 +50,17 @@ Microsoft.Extensions.Hosting contains dependencyinjection
 
         -   EF core (Scope)
         -   CosmosClient (Singleton) -- Threadsafe and intended for reuse.
+
+# ch4 expanding 
+
+-   Mutliple Implementing types
+    -   Resolving Directly: the last registration is returned
+    -   Resolving IEnumerable:  all registrations are returned
+    -   Use TryAdd
+
+-   Service Locator Pattern
+    -    a class references a central services repository and requests the services it needs from there
+-   Dependency Injection
+    -   a class declares its dependencies, and they get provided somehow. A DI container is one way
+
+    
