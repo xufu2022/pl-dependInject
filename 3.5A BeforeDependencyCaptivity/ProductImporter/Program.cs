@@ -8,6 +8,9 @@ using ProductImporter.Transformation.Transformations;
 using ProductImporter.Util;
 
 using var host = Host.CreateDefaultBuilder(args)
+    .UseDefaultServiceProvider((context, options) => {
+        options.ValidateScopes = true;
+    })
     .ConfigureServices((context, services) =>
     {
         services.AddTransient<Configuration>();
